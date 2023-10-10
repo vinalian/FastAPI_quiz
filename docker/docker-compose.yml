@@ -12,3 +12,13 @@ services:
     ports:
       - "5432:5432"
     restart: unless-stopped
+
+  fastapi:
+    build:
+      context: ../
+      dockerfile: Dockerfile
+    ports:
+      - "8010:8010"
+    command: ["sh", "-c", "ulimit -s 65535 && python start_website"]
+    depends_on:
+      - postgres

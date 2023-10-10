@@ -8,4 +8,4 @@ load_dotenv()
 
 if __name__ == '__main__':
     asyncio.run(init_models())
-    os.system(f'uvicorn main:app --reload --port {environ.get("WEBSITE_PORT")}')
+    os.system(f'uvicorn main:app --reload --port 8010')
